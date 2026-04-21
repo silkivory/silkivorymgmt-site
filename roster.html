@@ -8,75 +8,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* THE BLUEPRINT RESET */
+    /* RESET & BASE */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #ffffff; color: #000000; font-family: 'DM Mono', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     
     /* NAV */
-    nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eeeeee; position: sticky; top: 0; background: #ffffff; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
     .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
     .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
 
-    /* PAGE HEADER */
-    .page-header { padding: 100px 5% 60px; border-bottom: 1px solid #eeeeee; }
-    .eyebrow { font-size: 0.7rem; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 10px; }
-    h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(4rem, 12vw, 10rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
+    /* HEADER */
+    header { padding: 80px 5% 40px; border-bottom: 1px solid #eee; }
+    h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(4rem, 10vw, 8rem); text-transform: uppercase; line-height: 0.85; letter-spacing: -0.04em; }
 
-    /* ROSTER LIST */
-    .roster-list { border-bottom: 1px solid #eeeeee; }
-    .roster-row { display: grid; grid-template-columns: 80px 1.5fr 2fr 1fr; padding: 60px 5%; border-top: 1px solid #eeeeee; align-items: start; }
-    .num { font-size: 0.7rem; color: #cccccc; }
-    .name { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 3.5rem; text-transform: uppercase; line-height: 0.9; margin-top: -5px; }
-    .bio { font-size: 0.85rem; color: #666; line-height: 1.6; text-transform: uppercase; max-width: 500px; padding-right: 40px; }
-    .meta { font-size: 0.75rem; color: #999; text-transform: uppercase; }
-    .meta span { display: block; border-bottom: 1px solid #f0f0f0; padding: 10px 0; }
+    /* GRID LAYOUT */
+    .roster-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid #eee; }
+    .artist-card { position: relative; aspect-ratio: 4/5; overflow: hidden; border-right: 1px solid #eee; cursor: pointer; background: #000; }
+    .artist-card:last-child { border-right: none; }
+    .artist-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.8s ease; opacity: 0.9; }
+    
+    /* HOVER STATE */
+    .artist-card:hover img { transform: scale(1.08); filter: grayscale(0%); opacity: 1; }
+    .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); display: flex; align-items: flex-end; padding: 30px; opacity: 0; transition: opacity 0.4s ease; }
+    .artist-card:hover .overlay { opacity: 1; }
+    .overlay h2 { color: #fff; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 0.9; }
 
-    /* SUBMISSIONS BOX */
-    .submissions { padding: 100px 5%; text-align: center; border-bottom: 1px solid #eeeeee; }
-    .submissions p { font-size: 1.2rem; color: #888; text-transform: uppercase; margin-bottom: 30px; }
-    .btn-contact { border: 1px solid #000; padding: 15px 40px; color: #000; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
-    .btn-contact:hover { background: #000; color: #fff; }
+    /* MOBILE LABELS */
+    .mobile-label { display: none; padding: 20px 5%; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 2rem; text-transform: uppercase; border-bottom: 1px solid #eee; }
 
-    /* FOOTER */
-    footer { padding: 80px 5%; display: flex; justify-content: space-between; align-items: flex-end; }
-    .footer-logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 1; color: #000; }
-    .contact-link { color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; }
+    /* DRAWER (SPEC SHEET) */
+    .drawer { position: fixed; top: 0; right: -100%; width: 500px; height: 100%; background: #fff; z-index: 2000; box-shadow: -10px 0 50px rgba(0,0,0,0.1); transition: right 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); padding: 100px 50px; display: flex; flex-direction: column; overflow-y: auto; }
+    .drawer.active { right: 0; }
+    .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; visibility: hidden; transition: 0.5s; z-index: 1999; backdrop-filter: blur(5px); }
+    .drawer-overlay.active { opacity: 1; visibility: visible; }
+    
+    .close-btn { position: absolute; top: 30px; right: 40px; font-size: 2.5rem; cursor: pointer; font-weight: 200; }
+    .drawer h3 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 6rem; text-transform: uppercase; line-height: 0.85; margin-bottom: 30px; letter-spacing: -0.02em; }
+    .drawer .spec-label { font-size: 0.65rem; color: #bbb; text-transform: uppercase; letter-spacing: 0.25em; margin-top: 40px; display: block; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+    .drawer p { font-size: 0.85rem; line-height: 1.7; color: #333; margin-top: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
 
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .roster-row { grid-template-columns: 1fr; gap: 20px; }
-      .name { font-size: 3rem; }
+      .roster-grid { grid-template-columns: 1fr; }
+      .artist-card { border-right: none; border-bottom: none; aspect-ratio: 1/1; }
+      .overlay { display: none; }
+      .mobile-label { display: block; }
+      .drawer { width: 100%; padding: 80px 30px; }
+      h1 { font-size: 4.5rem; }
+      .drawer h3 { font-size: 4.5rem; }
     }
   </style>
 </head>
-<body>
-
-  <nav>
-    <a href="index.html" class="logo">SILK IVORY</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <a href="roster.html">Roster</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <header class="page-header">
-    <p class="eyebrow">Roster</p>
-    <h1>The Artists<br>We Build With</h1>
-  </header>
-
-  <section class="roster-list">
-    <div class="roster-row">
-      <span class="num">01</span>
-      <h2 class="name">Tommy<br>Newport</h2>
-      <p class="bio">Flagship management client. Global touring artist with 100M+ streams and major sync placements including Apple iPad. Featured by COLORS and Zane Lowe.</p>
-      <div class="meta">
-        <span>Management</span>
-        <span>Warner / APG</span>
-        <span>Global Sync</span>
-      </div>
-    </div>
-
-    <div class="roster-row">
-      <span class="num">02</span>
-      <h2 class="name">4th<br>Pyramid</h2>
-      <p class="bio">Platinum-certified producer and Silk Ivory founder. Credits include 21 Savage, Wu-Tang Clan, and MF DOOM. Lead architect for technical sound design.</p>
