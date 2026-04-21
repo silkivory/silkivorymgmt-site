@@ -12,17 +12,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; }
         
-        /* CLEAN NAV - NO CONTACT */
+        /* NAVIGATION - NO CONTACT */
         nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.25rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.1em; }
         .nav-links a { color: #000; text-decoration: none; font-size: 0.65rem; text-transform: uppercase; margin-left: 30px; letter-spacing: 0.15em; }
 
+        /* CONTENT AREA */
         .content { padding: 80px 5%; }
         .page-title { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.6rem; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 0.01em; }
 
+        /* GRID - FIXED 3 COLUMNS ON DESKTOP */
         .roster-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
@@ -30,16 +32,18 @@
             position: relative;
             overflow: hidden;
             aspect-ratio: 1 / 1;
-            background: #f9f9f9;
+            background: #000; /* Backdrop for images */
         }
 
         .artist-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
             transition: opacity 0.4s ease;
         }
 
+        /* HOVER OVERLAY */
         .artist-info {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -47,7 +51,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
+            opacity: 0; /* Hidden on desktop until hover */
             transition: opacity 0.3s ease;
         }
 
@@ -55,14 +59,18 @@
             font-family: 'Founders Grotesk X-Condensed', sans-serif;
             font-size: 2rem;
             text-transform: uppercase;
+            color: #000;
         }
 
+        /* HOVER TRIGGER */
         .artist-card:hover .artist-info { opacity: 1; }
         .artist-card:hover img { opacity: 0.3; }
 
+        /* MOBILE FIXES */
         @media (max-width: 768px) {
             .nav-links a { margin-left: 15px; font-size: 0.6rem; }
-            .roster-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .roster-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            /* On mobile, names stay hidden to keep the look clean, or you can tap to see. */
         }
     </style>
 </head>
@@ -92,7 +100,7 @@
                     <span>Artist Name</span>
                 </div>
             </div>
-        </div>
+            </div>
     </main>
 
 </body>
