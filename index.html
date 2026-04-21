@@ -4,7 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Silk Ivory</title>
-  <link rel="stylesheet" href="css/main.css" />
+ <style>
+  /* --- THE BLUEPRINT INJECTION (Direct from Canva Deck) --- */
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #666666;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { 
+    background-color: var(--black) !important; 
+    color: var(--white) !important; 
+    font-family: 'DM Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, .nav-logo {
+    font-family: 'Founders Grotesk X-Condensed', sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 0.85;
+    color: var(--white) !important;
+  }
+
+  /* HERO SECTION - Architectural & Massive */
+  .hero {
+    background-color: var(--black) !important;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    border-bottom: 1px solid #222;
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 18vw, 15rem) !important;
+    letter-spacing: -0.04em;
+    margin-left: -0.05em; /* Optical alignment */
+  }
+
+  .hero-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--grey) !important;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  /* NAV - Stealth Look */
+  .nav {
+    background: var(--black) !important;
+    border-bottom: 1px solid #222;
+    padding: 20px 5%;
+  }
+  .nav-logo, .nav-links a { color: var(--white) !important; text-decoration: none; }
+
+  /* STATEMENT - The High-End Contrast */
+  .statement {
+    padding: 120px 5%;
+    border-bottom: 1px solid #222;
+    background: var(--black) !important;
+  }
+  .statement-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    max-width: 900px;
+  }
+
+  /* TICKER - The High-Contrast Pop */
+  .ticker-wrap {
+    background: var(--white) !important;
+    color: var(--black) !important;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-family: 'Founders Grotesk X-Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--black) !important;
+    padding: 60px 5%;
+    border-top: 1px solid #222;
+  }
+
+  /* UTILITY */
+  .hero-cta, .btn-primary {
+    border: 1px solid var(--white);
+    padding: 12px 25px;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 30px;
+    display: inline-block;
+  }
+</style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk+X-Condensed:wght@600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
