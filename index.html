@@ -3,275 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silk Ivory</title>
- <style>
-  /* --- THE BLUEPRINT INJECTION (Direct from Canva Deck) --- */
-  :root {
-    --black: #000000;
-    --white: #ffffff;
-    --grey: #666666;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body { 
-    background-color: var(--black) !important; 
-    color: var(--white) !important; 
-    font-family: 'DM Mono', monospace;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* TYPOGRAPHY */
-  h1, h2, h3, .nav-logo {
-    font-family: 'Founders Grotesk X-Condensed', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 0.85;
-    color: var(--white) !important;
-  }
-
-  /* HERO SECTION - Architectural & Massive */
-  .hero {
-    background-color: var(--black) !important;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 5%;
-    border-bottom: 1px solid #222;
-  }
-
-  .hero-title {
-    font-size: clamp(5rem, 18vw, 15rem) !important;
-    letter-spacing: -0.04em;
-    margin-left: -0.05em; /* Optical alignment */
-  }
-
-  .hero-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--grey) !important;
-    text-transform: uppercase;
-    margin-top: 20px;
-  }
-
-  /* NAV - Stealth Look */
-  .nav {
-    background: var(--black) !important;
-    border-bottom: 1px solid #222;
-    padding: 20px 5%;
-  }
-  .nav-logo, .nav-links a { color: var(--white) !important; text-decoration: none; }
-
-  /* STATEMENT - The High-End Contrast */
-  .statement {
-    padding: 120px 5%;
-    border-bottom: 1px solid #222;
-    background: var(--black) !important;
-  }
-  .statement-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    max-width: 900px;
-  }
-
-  /* TICKER - The High-Contrast Pop */
-  .ticker-wrap {
-    background: var(--white) !important;
-    color: var(--black) !important;
-    padding: 15px 0;
-    text-transform: uppercase;
-    font-family: 'Founders Grotesk X-Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
-
-  /* FOOTER */
-  .footer {
-    background: var(--black) !important;
-    padding: 60px 5%;
-    border-top: 1px solid #222;
-  }
-
-  /* UTILITY */
-  .hero-cta, .btn-primary {
-    border: 1px solid var(--white);
-    padding: 12px 25px;
-    color: var(--white);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    margin-top: 30px;
-    display: inline-block;
-  }
-</style>
+  <title>Silk Ivory | Luxury Sound House</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk+X-Condensed:wght@600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* THE BLUEPRINT RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; color: #fff; font-family: 'DM Mono', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    
+    /* NAV */
+    nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #222; position: sticky; top: 0; background: #000; z-index: 1000; }
+    .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
+
+    /* HERO */
+    .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; border-bottom: 1px solid #222; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: #666; margin-bottom: 10px; }
+    h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(5rem, 18vw, 15rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; margin-left: -0.05em; }
+    .sub { font-size: 1.1rem; color: #888; margin-top: 20px; max-width: 500px; text-transform: uppercase; }
+
+    /* ROSTER SECTION */
+    .section-label { padding: 80px 5% 20px; font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 0.2em; border-bottom: 1px solid #222; }
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #222; }
+    .roster-item { padding: 60px 10%; border-right: 1px solid #222; }
+    .roster-item:last-child { border-right: none; }
+    .roster-num { font-size: 0.7rem; color: #444; margin-bottom: 20px; display: block; }
+    h2 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; margin-bottom: 15px; }
+    .desc { font-size: 0.85rem; color: #aaa; line-height: 1.6; }
+
+    /* TICKER */
+    .ticker-wrap { background: #fff; color: #000; padding: 20px 0; overflow: hidden; border-bottom: 1px solid #222; }
+    .ticker { display: flex; white-space: nowrap; animation: scroll 30s linear infinite; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 2rem; text-transform: uppercase; }
+    .ticker span { padding-right: 50px; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* FOOTER */
+    footer { padding: 80px 5%; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: flex-end; }
+    .footer-logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 3rem; text-transform: uppercase; }
+    .contact-link { color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 5px; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .roster-grid { grid-template-columns: 1fr; }
+      .roster-item { border-right: none; border-bottom: 1px solid #222; }
+      h1 { font-size: 5rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">SILK IVORY</a>
+  <nav>
+    <a href="index.html" class="logo">SILK IVORY</a>
     <div class="nav-links">
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
       <a href="roster.html">Roster</a>
       <a href="contact.html">Contact</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span>
-    </button>
   </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="roster.html">Roster</a>
-    <a href="contact.html">Contact</a>
+  <section class="hero">
+    <p class="eyebrow">Pasadena // Altadena</p>
+    <h1>SILK<br>IVORY</h1>
+    <p class="sub">A Luxury Sound House</p>
+  </section>
+
+  <p class="section-label">Core Roster & Production</p>
+  <div class="roster-grid">
+    <div class="roster-item">
+      <span class="roster-num">01</span>
+      <h2>Tommy<br>Newport</h2>
+      <p class="desc">Flagship Management client. Global touring, 100M+ streams, and high-prestige sync placement.</p>
+    </div>
+    <div class="roster-item">
+      <span class="roster-num">02</span>
+      <h2>4th<br>Pyramid</h2>
+      <p class="desc">Platinum-selling production and creative direction. Architect of the Silk Slaps series.</p>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Los Angeles</p>
-      <h1 class="hero-title">
-        <span class="line-1">SILK</span>
-        <span class="line-2">IVORY</span>
-      </h1>
-      <p class="hero-sub">Artist Management &amp; Boutique Imprint</p>
-      <a href="contact.html" class="hero-cta">Get in Touch</a>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </section>
-
-  <!-- STATEMENT -->
-  <section class="statement">
-    <div class="statement-inner">
-      <p class="statement-text">
-        We build careers at the intersection of <em>artistry and commerce</em> — developing artists, structuring deals, and producing records that last.
-      </p>
-    </div>
-  </section>
-
-  <!-- LABELS -->
-  <section class="labels">
-    <p class="labels-eyebrow">Deal History</p>
-    <div class="labels-grid">
-      <span>Universal Music</span>
-      <span>Epic Records</span>
-      <span>APG</span>
-      <span>Believe</span>
-      <span>Virgin</span>
-      <span>AWAL</span>
-      <span>Stem</span>
-      <span>Vydia</span>
-    </div>
-  </section>
-
-  <!-- SPLIT: MGMT + PRODUCTION -->
-  <section class="split">
-    <div class="split-item">
-      <span class="split-number">01</span>
-      <h2 class="split-title">Management</h2>
-      <p class="split-body">Full-service artist management from development through major label deals. We are invested in the long game — building careers with intention, not just momentum.</p>
-      <a href="services.html" class="split-link">Our Approach →</a>
-    </div>
-    <div class="split-divider"></div>
-    <div class="split-item">
-      <span class="split-number">02</span>
-      <h2 class="split-title">Production</h2>
-      <p class="split-body">Led by producer and founder Adam "4th Pyramid" Farag — credits spanning Billboard Top 100, Spotify Viral charts, sync placements in film, TV and global ad campaigns.</p>
-      <a href="services.html" class="split-link">Production Credits →</a>
-    </div>
-  </section>
-
-  <!-- CREDITS TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
-      <span>21 Savage</span>
-      <span class="dot">·</span>
-      <span>EARTHGANG</span>
-      <span class="dot">·</span>
-      <span>Tommy Newport</span>
-      <span class="dot">·</span>
-      <span>BigXThaPlug</span>
-      <span class="dot">·</span>
-      <span>The Black Eyed Peas</span>
-      <span class="dot">·</span>
-      <span>Wu-Tang Clan</span>
-      <span class="dot">·</span>
-      <span>MF DOOM</span>
-      <span class="dot">·</span>
-      <span>Allan Rayman</span>
-      <span class="dot">·</span>
-      <span>Jazz Cartier</span>
-      <span class="dot">·</span>
-      <span>24KGoldn</span>
-      <span class="dot">·</span>
-      <span>Leven Kali</span>
-      <span class="dot">·</span>
-      <span>21 Savage</span>
-      <span class="dot">·</span>
-      <span>EARTHGANG</span>
-      <span class="dot">·</span>
-      <span>Tommy Newport</span>
-      <span class="dot">·</span>
-      <span>BigXThaPlug</span>
-      <span class="dot">·</span>
-      <span>The Black Eyed Peas</span>
-      <span class="dot">·</span>
-      <span>Wu-Tang Clan</span>
-      <span class="dot">·</span>
-      <span>MF DOOM</span>
-      <span class="dot">·</span>
-      <span>Allan Rayman</span>
-      <span class="dot">·</span>
-      <span>Jazz Cartier</span>
-      <span class="dot">·</span>
+      <span>Tommy Newport</span><span>4th Pyramid</span><span>Mischa Chillak</span><span>21 Savage</span><span>BigXThaPlug</span><span>Wu-Tang Clan</span><span>MF DOOM</span><span>The Black Eyed Peas</span><span>Tommy Newport</span><span>4th Pyramid</span><span>Mischa Chillak</span><span>21 Savage</span><span>BigXThaPlug</span><span>Wu-Tang Clan</span><span>MF DOOM</span><span>The Black Eyed Peas</span>
     </div>
   </div>
 
-  <!-- SYNC -->
-  <section class="sync">
-    <div class="sync-inner">
-      <p class="sync-eyebrow">Sync &amp; Placement</p>
-      <h2 class="sync-title">Music that moves culture</h2>
-      <div class="sync-grid">
-        <div class="sync-item">
-          <span class="sync-cat">Film</span>
-          <p>21 &amp; Over, A Million Little Things</p>
-        </div>
-        <div class="sync-item">
-          <span class="sync-cat">Television</span>
-          <p>Search Party, Woke, Grand Crew, The Sinner, Single Drunk Female</p>
-        </div>
-        <div class="sync-item">
-          <span class="sync-cat">Advertising</span>
-          <p>Apple iPad, 2024 NFL Draft Theme, Red Bull, Sprite, Toyota</p>
-        </div>
-        <div class="sync-item">
-          <span class="sync-cat">Press</span>
-          <p>Zane Lowe, COLORS, Hypebeast, NYLON, The FADER, XXL</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
+  <footer>
+    <div class="footer-left">
       <p class="footer-logo">SILK IVORY</p>
-      <p class="footer-loc">Los Angeles, CA</p>
-      <a href="contact.html" class="footer-contact">4th@silkivorymgmt.com</a>
-      <p class="footer-copy">© 2025 Silk Ivory LLC. All rights reserved.</p>
+      <p style="color: #444; font-size: 0.7rem; margin-top: 10px;">© 2026 SILK IVORY LLC</p>
     </div>
+    <a href="mailto:4th@silkivorymgmt.com" class="contact-link">4th@silkivorymgmt.com</a>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
