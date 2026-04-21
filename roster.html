@@ -3,77 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roster — Silk Ivory</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <title>Roster | Silk Ivory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk+X-Condensed:wght@600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* THE BLUEPRINT RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #ffffff; color: #000000; font-family: 'DM Mono', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    
+    /* NAV */
+    nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eeeeee; position: sticky; top: 0; background: #ffffff; z-index: 1000; }
+    .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
+    .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
+
+    /* PAGE HEADER */
+    .page-header { padding: 100px 5% 60px; border-bottom: 1px solid #eeeeee; }
+    .eyebrow { font-size: 0.7rem; color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 10px; }
+    h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(4rem, 12vw, 10rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.04em; }
+
+    /* ROSTER LIST */
+    .roster-list { border-bottom: 1px solid #eeeeee; }
+    .roster-row { display: grid; grid-template-columns: 80px 1.5fr 2fr 1fr; padding: 60px 5%; border-top: 1px solid #eeeeee; align-items: start; }
+    .num { font-size: 0.7rem; color: #cccccc; }
+    .name { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 3.5rem; text-transform: uppercase; line-height: 0.9; margin-top: -5px; }
+    .bio { font-size: 0.85rem; color: #666; line-height: 1.6; text-transform: uppercase; max-width: 500px; padding-right: 40px; }
+    .meta { font-size: 0.75rem; color: #999; text-transform: uppercase; }
+    .meta span { display: block; border-bottom: 1px solid #f0f0f0; padding: 10px 0; }
+
+    /* SUBMISSIONS BOX */
+    .submissions { padding: 100px 5%; text-align: center; border-bottom: 1px solid #eeeeee; }
+    .submissions p { font-size: 1.2rem; color: #888; text-transform: uppercase; margin-bottom: 30px; }
+    .btn-contact { border: 1px solid #000; padding: 15px 40px; color: #000; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
+    .btn-contact:hover { background: #000; color: #fff; }
+
+    /* FOOTER */
+    footer { padding: 80px 5%; display: flex; justify-content: space-between; align-items: flex-end; }
+    .footer-logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 1; color: #000; }
+    .contact-link { color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; }
+
+    @media (max-width: 1024px) {
+      .roster-row { grid-template-columns: 1fr; gap: 20px; }
+      .name { font-size: 3rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">SILK IVORY</a>
+  <nav>
+    <a href="index.html" class="logo">SILK IVORY</a>
     <div class="nav-links">
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="roster.html" class="active">Roster</a>
+      <a href="roster.html">Roster</a>
       <a href="contact.html">Contact</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span>
-    </button>
   </nav>
 
-  <div class="mobile-menu">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="roster.html">Roster</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <header class="page-header">
+    <p class="eyebrow">Roster</p>
+    <h1>The Artists<br>We Build With</h1>
+  </header>
 
-  <section class="page-hero">
-    <p class="page-eyebrow">Roster</p>
-    <h1 class="page-title">The artists<br><em>we build with</em></h1>
-  </section>
-
-  <section class="roster-body">
-
-    <!-- Tommy Newport -->
-    <div class="roster-item">
-      <div class="roster-meta">
-        <span class="roster-num">01</span>
-        <span class="roster-type">Management · Production</span>
-      </div>
-      <div class="roster-info">
-        <h2 class="roster-name">Tommy Newport</h2>
-        <p class="roster-genre">Indie / Alternative / R&B</p>
-        <p class="roster-desc">UK-born, LA-based artist Tommy Newport is Silk Ivory's flagship management client. Signed in 2018, the partnership has produced 100M+ streams, a #1 on Spotify's influential Lorem playlist, and placement on Apple iPad's global campaign. Tommy's music has been featured across COLORS, Hypebeast, NYLON, The FADER, and earned a co-sign from Zane Lowe.</p>
-        <div class="roster-credits">
-          <span>APG / Warner</span>
-          <span>100M+ Streams</span>
-          <span>#1 Spotify Lorem</span>
-          <span>Apple iPad Campaign</span>
-        </div>
+  <section class="roster-list">
+    <div class="roster-row">
+      <span class="num">01</span>
+      <h2 class="name">Tommy<br>Newport</h2>
+      <p class="bio">Flagship management client. Global touring artist with 100M+ streams and major sync placements including Apple iPad. Featured by COLORS and Zane Lowe.</p>
+      <div class="meta">
+        <span>Management</span>
+        <span>Warner / APG</span>
+        <span>Global Sync</span>
       </div>
     </div>
 
-    <!-- Placeholder for future roster -->
-    <div class="roster-building">
-      <p>Silk Ivory is selectively expanding its roster.<br>We are currently accepting submissions from serious artists.</p>
-      <a href="contact.html" class="btn-primary">Submit for Consideration</a>
-    </div>
-
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-logo">SILK IVORY</p>
-      <p class="footer-loc">Los Angeles, CA</p>
-      <a href="contact.html" class="footer-contact">4th@silkivorymgmt.com</a>
-      <p class="footer-copy">© 2025 Silk Ivory LLC. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+    <div class="roster-row">
+      <span class="num">02</span>
+      <h2 class="name">4th<br>Pyramid</h2>
+      <p class="bio">Platinum-certified producer and Silk Ivory founder. Credits include 21 Savage, Wu-Tang Clan, and MF DOOM. Lead architect for technical sound design.</p>
