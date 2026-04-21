@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* THE WHITE BLUEPRINT RESET */
+    /* THE BLUEPRINT RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #ffffff; color: #000000; font-family: 'DM Mono', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     
@@ -17,13 +17,12 @@
     .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
     .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
 
-    /* HERO */
+    /* HERO - REVERTED TO ORIGINAL EXPANSIVE SPACING */
     .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; border-bottom: 1px solid #eeeeee; }
-    .eyebrow { font-size: 0.7rem; text-transform: uppercase; color: #aaaaaa; margin-bottom: 10px; letter-spacing: 0.2em; }
     h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(5rem, 20vw, 16rem); line-height: 0.8; text-transform: uppercase; letter-spacing: -0.05em; margin-left: -0.05em; color: #000; }
     .sub { font-size: 1rem; color: #888888; margin-top: 20px; max-width: 450px; text-transform: uppercase; line-height: 1.4; }
 
-    /* ROSTER GRID */
+    /* ROSTER GRID - REVERTED HEIGHTS */
     .section-label { padding: 60px 5% 20px; font-size: 0.7rem; color: #cccccc; text-transform: uppercase; letter-spacing: 0.2em; border-bottom: 1px solid #eeeeee; }
     .roster-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #eeeeee; }
     .roster-item { padding: 60px 5%; border-right: 1px solid #eeeeee; min-height: 400px; display: flex; flex-direction: column; justify-content: space-between; }
@@ -32,13 +31,13 @@
     h2 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4.5rem; text-transform: uppercase; line-height: 0.9; margin-bottom: 20px; color: #000; }
     .desc { font-size: 0.8rem; color: #666666; line-height: 1.6; text-transform: uppercase; }
 
-    /* TICKER (Inverted for the White Theme) */
+    /* TICKER */
     .ticker-wrap { background: #000000; color: #ffffff; padding: 25px 0; overflow: hidden; }
     .ticker { display: flex; white-space: nowrap; animation: scroll 40s linear infinite; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 2.5rem; text-transform: uppercase; }
     .ticker span { padding-right: 60px; }
     @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* FOOTER */
+    /* FOOTER - REVERTED PADDING */
     footer { padding: 100px 5%; border-top: 1px solid #eeeeee; display: flex; justify-content: space-between; align-items: flex-end; }
     .footer-logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 1; color: #000; }
     .contact-link { color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; }
@@ -61,7 +60,6 @@
   </nav>
 
   <section class="hero">
-    <p class="eyebrow">Pasadena // Altadena</p>
     <h1>SILK<br>IVORY</h1>
     <p class="sub">Luxury Sound House & Boutique Management. Defining the intersection of artistry and commerce.</p>
   </section>
@@ -100,7 +98,7 @@
   <footer>
     <div class="footer-left">
       <p class="footer-logo">SILK IVORY</p>
-      <p style="color: #cccccc; font-size: 0.6rem; margin-top: 15px; letter-spacing: 0.1em;">EST. 2018 // RE-INDEXED 2026</p>
+      <p style="color: #cccccc; font-size: 0.6rem; margin-top: 15px; letter-spacing: 0.1em;">RE-INDEXED 2026 // GLOBAL OPS</p>
     </div>
     <a href="mailto:4th@silkivorymgmt.com" class="contact-link">4th@silkivorymgmt.com</a>
   </footer>
