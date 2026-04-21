@@ -8,11 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         
-        /* NAVIGATION */
         nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
         .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
@@ -20,30 +18,35 @@
         header { padding: 80px 5% 40px; border-bottom: 1px solid #eee; }
         h1 { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(4rem, 10vw, 8rem); text-transform: uppercase; line-height: 0.85; letter-spacing: -0.04em; }
 
-        /* ROSTER GRID */
         .roster-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid #eee; background: #fff; }
         
-        /* LINK CARD STYLES */
         .artist-link { text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; background: #000; border-right: 1px solid #eee; aspect-ratio: 4/5; }
         .artist-link:last-child { border-right: none; }
 
         .artist-link img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1); opacity: 0.85; }
         .artist-link:hover img { transform: scale(1.05); filter: grayscale(0%); opacity: 1; }
 
-        /* HOVER OVERLAY */
         .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); display: flex; align-items: flex-end; padding: 30px; opacity: 0; transition: opacity 0.4s ease; }
         .artist-link:hover .overlay { opacity: 1; }
         .overlay h2 { color: #fff; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 0.85; }
 
-        /* MOBILE LABELS */
-        .mobile-label { display: none; padding: 20px 5%; font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 2rem; text-transform: uppercase; border-bottom: 1px solid #eee; background: #fff; }
+        .mobile-label { display: none; }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .roster-grid { grid-template-columns: 1fr; }
+            .roster-grid { display: flex; flex-direction: column; }
+            .artist-wrap { display: flex; flex-direction: column; border-bottom: 1px solid #eee; }
             .artist-link { border-right: none; aspect-ratio: 1/1; }
             .overlay { display: none; }
-            .mobile-label { display: block; }
+            .mobile-label {
+                display: block;
+                padding: 18px 5%;
+                font-family: 'Founders Grotesk X-Condensed', sans-serif;
+                font-size: 2rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                background: #fff;
+                color: #000;
+            }
         }
     </style>
 </head>
@@ -62,23 +65,31 @@
     </header>
 
     <section class="roster-grid">
-        <a href="https://4thpyramid.com" target="_blank" class="artist-link">
-            <img src="images/4th.jpg" alt="4th Pyramid">
-            <div class="overlay"><h2>4th<br>Pyramid</h2></div>
-            <div class="mobile-label">01 / 4th Pyramid</div>
-        </a>
 
-        <a href="https://tommynewport.com" target="_blank" class="artist-link">
-            <img src="images/tommy.webp" alt="Tommy Newport">
-            <div class="overlay"><h2>Tommy<br>Newport</h2></div>
-            <div class="mobile-label">02 / Tommy Newport</div>
-        </a>
+        <div class="artist-wrap">
+            <a href="https://4thpyramid.com" target="_blank" class="artist-link">
+                <img src="images/4th.jpg" alt="4th Pyramid">
+                <div class="overlay"><h2>4th<br>Pyramid</h2></div>
+            </a>
+            <div class="mobile-label">4TH PYRAMID</div>
+        </div>
 
-        <a href="https://mischachillak.com/" target="_blank" class="artist-link">
-            <img src="images/mischa.jpg" alt="Mischa Chillak">
-            <div class="overlay"><h2>Mischa<br>Chillak</h2></div>
-            <div class="mobile-label">03 / Mischa Chillak</div>
-        </a>
+        <div class="artist-wrap">
+            <a href="https://tommynewport.com" target="_blank" class="artist-link">
+                <img src="images/tommy.webp" alt="Tommy Newport">
+                <div class="overlay"><h2>Tommy<br>Newport</h2></div>
+            </a>
+            <div class="mobile-label">TOMMY NEWPORT</div>
+        </div>
+
+        <div class="artist-wrap">
+            <a href="https://mischachillak.com/" target="_blank" class="artist-link">
+                <img src="images/mischa.jpg" alt="Mischa Chillak">
+                <div class="overlay"><h2>Mischa<br>Chillak</h2></div>
+            </a>
+            <div class="mobile-label">MISCHA CHILLAK</div>
+        </div>
+
     </section>
 
 </body>
