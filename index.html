@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silk Ivory | Luxury Sound House</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; }
+        body { 
+            background: #ffffff; 
+            color: #000; 
+            font-family: 'DM Mono', monospace; 
+            -webkit-font-smoothing: antialiased; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
         
         nav { display: flex; justify-content: space-between; padding: 25px 5%; position: fixed; width: 100%; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.25rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -17,7 +26,7 @@
 
         /* HERO SECTION */
         .hero { 
-            height: 100vh; 
+            flex: 1;
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -38,9 +47,32 @@
         .tagline {
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.4em; /* Very wide for that premium look */
+            letter-spacing: 0.4em;
             color: #000;
-            margin-top: 10px;
+        }
+
+        /* STEALTH FOOTER */
+        footer {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .location { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: #999; }
+
+        .contact-link {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-color: #000;
         }
 
         @media (max-width: 768px) {
@@ -56,7 +88,6 @@
         <div class="nav-links">
             <a href="about.html">About</a>
             <a href="roster.html">Roster</a>
-            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
@@ -64,6 +95,11 @@
         <h1>Silk Ivory</h1>
         <div class="tagline">Luxury Sound House</div>
     </main>
+
+    <footer>
+        <span class="location">Los Angeles, CA</span>
+        <a href="mailto:4th@silkivorymgmt.com" class="contact-link">Inquiries</a>
+    </footer>
 
 </body>
 </html>
