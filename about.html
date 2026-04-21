@@ -8,30 +8,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; }
         
-        /* NAVIGATION */
         nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
         .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
 
-        /* HEADER & INTRO */
-        header { padding: 120px 5% 80px; }
-        .intro-text { max-width: 850px; }
-        .intro-text p { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; text-transform: uppercase; margin-bottom: 40px; }
-        .intro-text p span { color: #ccc; }
+        header { padding: 100px 5%; min-height: 80vh; display: flex; align-items: flex-start; }
+        
+        .intro-text { max-width: 800px; }
+        
+        /* Refined Typography */
+        .intro-text p { 
+            font-family: 'Founders Grotesk X-Condensed', sans-serif; 
+            font-size: clamp(1.8rem, 4vw, 2.8rem); /* Controlled size */
+            line-height: 1.05; 
+            text-transform: uppercase; 
+            margin-bottom: 30px; 
+            letter-spacing: -0.01em;
+        }
 
-        /* THE RECORD - SUBTLE LIST STYLE */
-        .the-record { border-top: 1px solid #eee; padding: 60px 5%; margin-top: 40px; display: flex; flex-wrap: wrap; gap: 60px; }
-        .record-group { max-width: 300px; }
-        .label { font-size: 0.6rem; color: #bbb; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 12px; }
-        .value { font-size: 0.75rem; line-height: 1.6; text-transform: uppercase; color: #666; letter-spacing: 0.05em; }
+        .intro-text p span { color: #999; } /* Softer contrast for the second paragraph */
 
         @media (max-width: 768px) {
-            header { padding: 80px 5% 40px; }
-            .the-record { flex-direction: column; gap: 40px; }
+            header { padding: 60px 5%; }
+            .intro-text p { font-size: 2rem; }
         }
     </style>
 </head>
@@ -52,21 +54,6 @@
             <p><span>We provide the creative and business architecture for a curated roster of artists to scale. Built on twenty years of production and executive experience, we prioritize long-term brand equity over volume.</span></p>
         </div>
     </header>
-
-    <section class="the-record">
-        <div class="record-group">
-            <span class="label">Network</span>
-            <div class="value">Apple / Nike / HBO / Netflix / Disney / Google</div>
-        </div>
-        <div class="record-group">
-            <span class="label">Impact</span>
-            <div class="value">500M+ Collective Streams</div>
-        </div>
-        <div class="record-group">
-            <span class="label">Accreditation</span>
-            <div class="value">Multiple Platinum & Gold Certifications</div>
-        </div>
-    </section>
 
 </body>
 </html>
