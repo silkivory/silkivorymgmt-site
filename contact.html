@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Silk Ivory</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk+X-Condensed:wght@600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">SILK IVORY</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="roster.html">Roster</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="roster.html">Roster</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <section class="page-hero">
+    <p class="page-eyebrow">Contact</p>
+    <h1 class="page-title">Let's talk<br><em>about what's next</em></h1>
+  </section>
+
+  <section class="contact-body">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-block">
+          <p class="contact-label">General</p>
+          <a href="mailto:4th@silkivorymgmt.com" class="contact-email">4th@silkivorymgmt.com</a>
+        </div>
+        <div class="contact-block">
+          <p class="contact-label">Management Inquiries</p>
+          <a href="mailto:4th@silkivorymgmt.com" class="contact-email">4th@silkivorymgmt.com</a>
+        </div>
+        <div class="contact-block">
+          <p class="contact-label">Production &amp; Sessions</p>
+          <a href="mailto:4th@silkivorymgmt.com" class="contact-email">4th@silkivorymgmt.com</a>
+        </div>
+        <div class="contact-block">
+          <p class="contact-label">Sync &amp; Licensing</p>
+          <a href="mailto:4th@silkivorymgmt.com" class="contact-email">4th@silkivorymgmt.com</a>
+        </div>
+        <div class="contact-block">
+          <p class="contact-label">Location</p>
+          <p class="contact-detail">Los Angeles, CA</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="management">Artist Management</option>
+              <option value="production">Production / Session</option>
+              <option value="sync">Sync &amp; Licensing</option>
+              <option value="internship">Internship</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us what you're working on..." rows="6"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">SILK IVORY</p>
+      <p class="footer-loc">Los Angeles, CA</p>
+      <a href="contact.html" class="footer-contact">4th@silkivorymgmt.com</a>
+      <p class="footer-copy">© 2025 Silk Ivory LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
