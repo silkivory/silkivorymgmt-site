@@ -1,99 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Silk Ivory</title>
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Founders+Grotesk+X-Condensed:wght@600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Silk Ivory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        
+        /* NAVIGATION */
+        nav { display: flex; justify-content: space-between; padding: 30px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+        .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.5rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
+        .nav-links a { color: #000; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; margin-left: 25px; letter-spacing: 0.1em; }
+
+        /* HEADER & INTRO */
+        header { padding: 120px 5% 80px; }
+        .intro-text { max-width: 850px; }
+        .intro-text p { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; text-transform: uppercase; margin-bottom: 40px; }
+        .intro-text p span { color: #ccc; }
+
+        /* THE RECORD - SUBTLE LIST STYLE */
+        .the-record { border-top: 1px solid #eee; padding: 60px 5%; margin-top: 40px; display: flex; flex-wrap: wrap; gap: 60px; }
+        .record-group { max-width: 300px; }
+        .label { font-size: 0.6rem; color: #bbb; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 12px; }
+        .value { font-size: 0.75rem; line-height: 1.6; text-transform: uppercase; color: #666; letter-spacing: 0.05em; }
+
+        @media (max-width: 768px) {
+            header { padding: 80px 5% 40px; }
+            .the-record { flex-direction: column; gap: 40px; }
+        }
+    </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">SILK IVORY</a>
-    <div class="nav-links">
-      <a href="about.html" class="active">About</a>
-      <a href="services.html">Services</a>
-      <a href="roster.html">Roster</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="mobile-menu">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="roster.html">Roster</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <p class="page-eyebrow">About</p>
-    <h1 class="page-title">A company built<br><em>from the inside out</em></h1>
-  </section>
-
-  <!-- ABOUT BODY -->
-  <section class="about-body">
-    <div class="about-grid">
-      <div class="about-col-left">
-        <p class="about-large">Silk Ivory is an artist management company, boutique record imprint, and production house based in Los Angeles.</p>
-      </div>
-      <div class="about-col-right">
-        <p>Founded by Adam "4th Pyramid" Farag — a Toronto-born, LA-based producer, songwriter, and DJ with over two decades of experience at the highest levels of the music industry — Silk Ivory operates as a full-service creative and business infrastructure for artists who are ready to build something real.</p>
-        <p>What sets Silk Ivory apart is the rare combination of creative and executive capability under one roof. Our founder has been in the room where the music is made and in the room where the deals are signed. That dual fluency shapes how we approach every artist relationship.</p>
-        <p>We don't manage volume. We manage with depth — working closely with a selective roster to build careers that compound over time.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER -->
-  <section class="founder">
-    <div class="founder-inner">
-      <div class="founder-text">
-        <p class="founder-eyebrow">Founder</p>
-        <h2 class="founder-name">Adam "4th Pyramid" Farag</h2>
-        <p class="founder-bio">Adam Farag is a producer, songwriter, mix engineer and DJ whose work spans hip-hop, R&amp;B, indie, and beyond. His production and co-writing credits include 21 Savage, The Black Eyed Peas, EARTHGANG, Wu-Tang Clan, MF DOOM, BigXThaPlug, Allan Rayman and many others.</p>
-        <p class="founder-bio">In 2024, he co-wrote 21 Savage's "Red Sky" which peaked at #57 on the Billboard Hot 100, appearing on <em>American Dream</em> — which debuted at #1 on the Billboard 200. In 2023, his production on Tommy Newport's "Sunset For The Dead" peaked at #15 on Spotify's Viral Top 50.</p>
-        <p class="founder-bio">As a manager, Adam signed Tommy Newport in 2018 and guided him from independent artist to major label deal, accumulating 100M+ streams, placements in film and television, and co-signs from Zane Lowe, Hypebeast, The FADER, COLORS and NYLON along the way.</p>
-        <div class="founder-links">
-          <a href="https://4thpyramid.com" target="_blank" rel="noopener">4thpyramid.com ↗</a>
+    <nav>
+        <a href="index.html" class="logo">SILK IVORY</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="roster.html">Roster</a>
+            <a href="contact.html">Contact</a>
         </div>
-      </div>
-      <div class="founder-stats">
-        <div class="stat">
-          <span class="stat-num">100M+</span>
-          <span class="stat-label">Streams on managed roster</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">#1</span>
-          <span class="stat-label">Spotify Lorem playlist</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">#57</span>
-          <span class="stat-label">Billboard Hot 100</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">20+</span>
-          <span class="stat-label">Years in the industry</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-logo">SILK IVORY</p>
-      <p class="footer-loc">Los Angeles, CA</p>
-      <a href="contact.html" class="footer-contact">4th@silkivorymgmt.com</a>
-      <p class="footer-copy">© 2025 Silk Ivory LLC. All rights reserved.</p>
-    </div>
-  </footer>
+    <header>
+        <div class="intro-text">
+            <p>Silk Ivory is a Los Angeles-based management firm, record imprint, and production house founded by Platinum-certified producer Adam "4th Pyramid" Farag.</p>
+            <p><span>We provide the creative and business architecture for a curated roster of artists to scale. Built on twenty years of production and executive experience, we prioritize long-term brand equity over volume.</span></p>
+        </div>
+    </header>
 
-  <script src="js/main.js"></script>
+    <section class="the-record">
+        <div class="record-group">
+            <span class="label">Network</span>
+            <div class="value">Apple / Nike / HBO / Netflix / Disney / Google</div>
+        </div>
+        <div class="record-group">
+            <span class="label">Impact</span>
+            <div class="value">500M+ Collective Streams</div>
+        </div>
+        <div class="record-group">
+            <span class="label">Accreditation</span>
+            <div class="value">Multiple Platinum & Gold Certifications</div>
+        </div>
+    </section>
+
 </body>
 </html>
