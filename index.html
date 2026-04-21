@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silk Ivory</title>
+    <title>Silk Ivory | Luxury Sound House</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Founders+Grotesk+X-Condensed:wght@600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; }
         
         nav { display: flex; justify-content: space-between; padding: 25px 5%; position: fixed; width: 100%; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.25rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -17,52 +17,35 @@
 
         /* HERO SECTION */
         .hero { 
-            height: 90vh; 
+            height: 100vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
+            align-items: center;
+            text-align: center;
             padding: 0 5%; 
         }
+
         .hero h1 { 
             font-family: 'Founders Grotesk X-Condensed', sans-serif; 
-            font-size: clamp(4rem, 15vw, 12rem); 
-            line-height: 0.9; 
+            font-size: clamp(5rem, 18vw, 14rem); 
+            line-height: 0.85; 
             text-transform: uppercase; 
             letter-spacing: -0.02em;
+            margin-bottom: 20px;
         }
 
-        /* MOVING BANNER (THE NETWORK) */
-        .marquee {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #fff;
-            border-top: 1px solid #eee;
-            padding: 20px 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: scroll 40s linear infinite;
-        }
-        .marquee-content span {
-            font-family: 'Founders Grotesk X-Condensed', sans-serif;
-            font-size: 1.25rem;
+        .tagline {
+            font-size: 0.75rem;
             text-transform: uppercase;
-            padding: 0 40px;
+            letter-spacing: 0.4em; /* Very wide for that premium look */
             color: #000;
-            letter-spacing: 0.1em;
-        }
-
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            margin-top: 10px;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 5rem; }
-            .marquee-content span { font-size: 1rem; padding: 0 20px; }
+            .hero h1 { font-size: 6rem; }
+            .tagline { font-size: 0.6rem; letter-spacing: 0.2em; }
         }
     </style>
 </head>
@@ -78,15 +61,9 @@
     </nav>
 
     <main class="hero">
-        <h1>Silk<br>Ivory</h1>
+        <h1>Silk Ivory</h1>
+        <div class="tagline">Luxury Sound House</div>
     </main>
-
-    <div class="marquee">
-        <div class="marquee-content">
-            <span>Apple</span> <span>Nike</span> <span>HBO</span> <span>NFL</span> <span>Sprite</span> <span>Disney</span> <span>Netflix</span> <span>Google</span>
-            <span>Apple</span> <span>Nike</span> <span>HBO</span> <span>NFL</span> <span>Sprite</span> <span>Disney</span> <span>Netflix</span> <span>Google</span>
-        </div>
-    </div>
 
 </body>
 </html>
