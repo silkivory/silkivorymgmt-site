@@ -12,6 +12,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #ffffff; color: #000; font-family: 'DM Mono', monospace; -webkit-font-smoothing: antialiased; }
         
+        /* CLEAN NAV - NO CONTACT */
         nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.25rem; text-decoration: none; color: #000; text-transform: uppercase; letter-spacing: 0.1em; }
         .nav-links a { color: #000; text-decoration: none; font-size: 0.65rem; text-transform: uppercase; margin-left: 30px; letter-spacing: 0.15em; }
@@ -19,69 +20,73 @@
         .content { padding: 80px 5%; }
         .page-title { font-family: 'Founders Grotesk X-Condensed', sans-serif; font-size: 1.6rem; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 0.01em; }
 
-        /* ROSTER GRID */
+        /* ROSTER GRID - DESKTOP FIRST */
         .roster-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
+            gap: 2px; /* Tight, luxury gap */
         }
 
         .artist-card {
             position: relative;
             overflow: hidden;
-            background: #f9f9f9;
             aspect-ratio: 1 / 1;
+            background: #000;
         }
 
         .artist-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.4s ease;
+            display: block;
+            transition: opacity 0.5s ease;
         }
 
-        /* HOVER EFFECT (DESKTOP ONLY) */
+        /* DESKTOP HOVER LOGIC */
         .artist-info {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
+            opacity: 0; /* Hidden by default on desktop */
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
         .artist-info span {
             font-family: 'Founders Grotesk X-Condensed', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-transform: uppercase;
+            color: #000;
         }
 
-        /* Only applies hover if the device supports it (Desktop) */
+        /* Only trigger hover on devices that have a mouse */
         @media (hover: hover) {
             .artist-card:hover .artist-info { opacity: 1; }
-            .artist-card:hover img { opacity: 0.3; }
+            .artist-card:hover img { opacity: 0.2; }
         }
 
-        /* MOBILE FIX: SHOW NAMES BELOW PICTURES */
+        /* MOBILE FIX: NO HOVER, JUST NAMES BELOW */
         @media (max-width: 768px) {
-            .roster-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-            .artist-card { aspect-ratio: auto; background: none; }
+            .roster-grid { grid-template-columns: 1fr; gap: 40px; } /* Single column stack for impact */
+            .artist-card { aspect-ratio: auto; overflow: visible; }
             .artist-info { 
                 position: relative; 
                 opacity: 1; 
                 background: none; 
-                justify-content: flex-start; 
-                padding: 10px 0;
-                height: auto;
+                height: auto; 
+                padding: 15px 0;
+                justify-content: flex-start;
             }
-            .artist-info span { font-size: 1rem; letter-spacing: 0.05em; }
+            .artist-info span { font-size: 1.2rem; letter-spacing: 0.05em; }
             .nav-links a { margin-left: 15px; font-size: 0.6rem; }
         }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">SILK IVORY</a>
         <div class="nav-links">
@@ -89,6 +94,7 @@
             <a href="roster.html">Roster</a>
         </div>
     </nav>
+
     <main class="content">
         <h1 class="page-title">Roster</h1>
         
@@ -105,7 +111,8 @@
                     <span>Artist Name</span>
                 </div>
             </div>
-        </div>
+            </div>
     </main>
+
 </body>
 </html>
